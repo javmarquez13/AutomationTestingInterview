@@ -16,6 +16,10 @@ variables:
 
 steps:
 - task: NuGetToolInstaller@1
+- task: VSTest@3
+  inputs:
+    testSelector: 'testRun'
+    searchFolder: '$(System.DefaultWorkingDirectory)'
 
 - task: NuGetCommand@2
   inputs:
